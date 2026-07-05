@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav>
+        <span class="marca">Precode</span>
+        <div class="links">
+            <a href="index.html">Cadastro</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="pedidos.html" class="ativo">Pedidos</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Pedidos</h1>
+
+        <form id="formulario-pedido" class="cartao-form">
+            <h2>Novo pedido</h2>
+
+            <div class="linha">
+                <label>Nome do cliente
+                    <input type="text" name="nome" placeholder="Maria da Silva" required>
+                </label>
+                <label>CPF/CNPJ
+                    <input type="text" name="cpfCnpj" placeholder="12345678909" required>
+                </label>
+                <label>E-mail
+                    <input type="email" name="email" placeholder="maria@email.com" required>
+                </label>
+                <label>Telefone
+                    <input type="text" name="telefone" placeholder="44999990000" required>
+                </label>
+            </div>
+
+            <div class="linha">
+                <label>CEP
+                    <input type="text" name="cep" placeholder="87000000" required>
+                </label>
+                <label>Endereço
+                    <input type="text" name="endereco" placeholder="Av. Brasil" required>
+                </label>
+                <label>Número
+                    <input type="text" name="numero" placeholder="100" required>
+                </label>
+                <label>Bairro
+                    <input type="text" name="bairro" placeholder="Centro" required>
+                </label>
+                <label>Cidade
+                    <input type="text" name="cidade" placeholder="Maringá" required>
+                </label>
+                <label>UF
+                    <input type="text" name="uf" maxlength="2" placeholder="PR" required>
+                </label>
+            </div>
+
+            <h3>Itens do pedido</h3>
+            <div class="linha linha-itens">
+                <label>Produto
+                    <select id="seletor-produto"></select>
+                </label>
+                <label>Quantidade
+                    <input type="number" id="quantidade-item" step="1" min="1" value="1">
+                </label>
+                <button type="button" id="botao-adicionar" class="botao-secundario">Adicionar item</button>
+            </div>
+
+            <table id="tabela-itens" class="oculto">
+                <thead>
+                    <tr><th>Produto</th><th>Qtd.</th><th>Unitário (R$)</th><th>Subtotal (R$)</th><th></th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="rodape-pedido">
+                <label class="campo-frete">Frete (R$)
+                    <input type="number" id="frete" step="0.01" min="0" value="0">
+                </label>
+                <span class="total">Total: <strong id="valor-total">R$ 0,00</strong></span>
+                <button type="submit" id="botao-criar">Criar pedido</button>
+            </div>
+        </form>
+
+        <h2 class="titulo-secao">Pedidos enviados</h2>
+        <div class="cartao">
+            <table id="tabela-pedidos">
+                <thead>
+                    <tr>
+                        <th>Nº Precode</th>
+                        <th>Cliente</th>
+                        <th>Itens</th>
+                        <th>Total (R$)</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="6" class="vazio">Carregando pedidos...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <section id="retorno" class="oculto">
+            <h2 id="retorno-titulo"></h2>
+            <p id="retorno-mensagem"></p>
+            <pre id="retorno-json"></pre>
+        </section>
+    </main>
+
+    <script src="js/pedidos.js"></script>
+</body>
+</html>
