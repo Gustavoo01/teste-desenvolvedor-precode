@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav>
+        <span class="marca">Precode</span>
+        <div class="links">
+            <a href="index.html">Cadastro</a>
+            <a href="produtos.html" class="ativo">Produtos</a>
+            <a href="pedidos.html">Pedidos</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Produtos cadastrados</h1>
+
+        <div class="cartao">
+            <table id="tabela-produtos">
+                <thead>
+                    <tr>
+                        <th>SKU</th>
+                        <th>Produto</th>
+                        <th>Marca</th>
+                        <th>Preço (R$)</th>
+                        <th>Estoque</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="6" class="vazio">Carregando produtos...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <section id="retorno" class="oculto">
+            <h2 id="retorno-titulo"></h2>
+            <p id="retorno-mensagem"></p>
+            <pre id="retorno-json"></pre>
+        </section>
+    </main>
+
+    <script src="js/produtos.js"></script>
+</body>
+</html>
