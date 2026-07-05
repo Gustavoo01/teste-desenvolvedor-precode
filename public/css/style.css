@@ -1,4 +1,303 @@
-* {
+* { 
+    box-sizing: border-box; 
+}
+
+body {
     margin: 0;
-    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+}
+
+nav {
+    background: #008ad0;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.marca { 
+    color: #fff; 
+    font-size: 17px; 
+}
+
+nav .links a {
+    color: #cfe0f2;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+nav .links a:hover { 
+    color: #fff; 
+}
+
+nav .links a.ativo { 
+    background: #297d77; 
+    color: #fff; 
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
+
+h1 { 
+    margin: 0 0 30px; 
+    font-size: 24px; 
+    text-align: center;
+}
+
+h3 { 
+    margin: 20px 0 10px; 
+}
+
+.titulo-secao { 
+    margin: 35px 0 10px; 
+}
+
+.descricao {
+    margin: 0 0 25px; 
+    color: #666; 
+}
+
+code {
+    background: #e8f1fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+/* formulários e cartões */
+
+form, .cartao, .cartao-form {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+form, .cartao-form { 
+    padding: 20px; 
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+input, textarea, select {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 8px 10px;
+    font: inherit;
+    font-weight: normal;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.linha {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0 15px;
+}
+
+.linha-itens {
+    grid-template-columns: 2fr 1fr auto;
+    align-items: end;
+}
+
+.linha-itens button { 
+    margin-bottom: 15px; 
+}
+
+/* botões */
+
+button {
+    background: #1673c4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 22px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) { 
+    background: #297d77; 
+}
+
+button:disabled { 
+    opacity: 0.6; 
+}
+
+.botao-secundario { 
+    background: #e8f1fa; color: #0d3b66; 
+}
+
+.botao-secundario:hover:not(:disabled) { 
+    background: #d5e6f7; 
+}
+
+.botao-pequeno { 
+    padding: 5px 12px; font-size: 13px; 
+}
+
+.botao-perigo { 
+    background: #c0392b; 
+}
+
+.botao-perigo:hover:not(:disabled) { 
+    background: #922b21; 
+}
+
+/* tabelas */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+form table { 
+    margin-bottom: 20px; 
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+thead th { 
+    background: #f5f5f5; 
+}
+
+tbody tr:last-child td { 
+    border-bottom: none; 
+}
+
+table input { 
+    width: 110px;
+    margin: 0; 
+    display: inline-block; 
+}
+
+.vazio {
+    text-align: center; 
+    color: #888; 
+    padding: 30px 10px; 
+}
+
+.celula-itens { 
+    max-width: 240px; 
+    color: #666; 
+    font-size: 13px; 
+}
+
+.celula-acoes { 
+    white-space: nowrap; 
+    text-align: right; 
+}
+
+.celula-acoes button { 
+    margin-left: 5px; 
+}
+
+/* status dos pedidos */
+
+.badge {
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge.novo { 
+    background: #e8f1fa; 
+    color: #0d3b66; 
+}
+
+.badge.aprovado { 
+    background: #d4edda; 
+    color: #1a7f4e; 
+}
+
+.badge.cancelado { 
+    background: #f8d7da; 
+    color: #b3261e; 
+}
+
+/* rodapé do pedido */
+
+.rodape-pedido {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.campo-frete { 
+    margin: 0; 
+}
+
+.campo-frete input { 
+    width: 120px; 
+}
+
+.total strong { 
+    font-size: 18px; 
+}
+
+/* retorno da API */
+
+#retorno {
+    margin-top: 25px;
+    padding: 15px 20px;
+    border-radius: 6px;
+    border: 1px solid;
+}
+
+#retorno.oculto { 
+    display: none; 
+}
+
+#retorno.sucesso { 
+    background: #d4edda; 
+    border-color: #1a7f4e; 
+}
+
+#retorno.erro { 
+    background: #f8d7da; 
+    border-color: #b3261e; 
+}
+
+#retorno h2 { 
+    margin: 0 0 5px; 
+    font-size: 16px; 
+}
+
+#retorno pre {
+    background: #2b2b2b;
+    color: #eee;
+    padding: 12px 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 13px;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .linha-itens { grid-template-columns: 1fr; }
+    .rodape-pedido button { width: 100%; }
 }

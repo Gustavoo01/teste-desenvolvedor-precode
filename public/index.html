@@ -3,11 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precode</title>
+    <title>Cadastro de Produto</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div>
-        <p>Teste</p>
-    </div>
+
+    <nav>
+        <span class="marca">Precode</span>
+        <div class="links">
+            <a href="index.html" class="ativo">Cadastro</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="pedidos.html">Pedidos</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Cadastro de produto</h1>
+
+        <form id="formulario">
+            <label>Título do produto (mín. 20 caracteres)
+                <input type="text" name="nome" minlength="20" maxlength="255" required>
+            </label>
+
+            <label>Descrição (mín. 100 caracteres)
+                <textarea name="descricao" rows="4" minlength="100" required></textarea>
+            </label>
+
+            <div class="linha">
+                <label>Marca
+                    <input type="text" name="marca" required>
+                </label>
+                <label>Preço de venda (R$)
+                    <input type="number" name="preco" step="0.01" min="0.01" required>
+                </label>
+                <label>Custo (R$)
+                    <input type="number" name="custo" step="0.01" min="0.01" required>
+                </label>
+                <label>Estoque
+                    <input type="number" name="estoque" step="1" min="0" value="0" required>
+                </label>
+            </div>
+
+            <div class="linha">
+                <label>Peso (kg)
+                    <input type="number" name="peso" step="0.001" min="0.001" max="9999" required>
+                </label>
+                <label>Largura (cm)
+                    <input type="number" name="largura" step="0.001" min="0.001" max="9999" required>
+                </label>
+                <label>Altura (cm)
+                    <input type="number" name="altura" step="0.001" min="0.001" max="9999" required>
+                </label>
+                <label>Comprimento (cm)
+                    <input type="number" name="comprimento" step="0.001" min="0.001" max="9999" required>
+                </label>
+            </div>
+
+            <button type="submit" id="botao">Cadastrar produto</button>
+        </form>
+
+        <section id="retorno" class="oculto">
+            <h2 id="retorno-titulo"></h2>
+            <p id="retorno-mensagem"></p>
+            <pre id="retorno-json"></pre>
+        </section>
+    </main>
+
+    <script src="js/cadastro.js"></script>
 </body>
 </html>
